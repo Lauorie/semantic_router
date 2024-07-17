@@ -1,6 +1,6 @@
 # pip insall semantic-router[local]
 
-from utterances import Utterances
+from es_app.se_router.utterances import Utterances
 from semantic_router import Route
 from semantic_router.layer import RouteLayer
 from semantic_router.encoders import HuggingFaceEncoder
