@@ -34,6 +34,9 @@ class RouteMatcher:
         self.route_names = [route.name for route in self.routes]
 
     def match_query(self, query: str) -> str:
+        for route in self.routes:
+            if query in route.utterances:
+                return route.name
         try:
             query_embedding = self.embedding_model.encode(query)
             similarities = cosine_similarity([query_embedding], self.route_embeddings)[0]
